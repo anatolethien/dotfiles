@@ -1,6 +1,8 @@
 # github.com/anatolethien/dotfiles
 
 import os
+import sys
+import platform
 
 import numpy as np
 import pandas as pd
@@ -11,10 +13,13 @@ from rich import pretty
 pretty.install()
 
 def clear():
-    os.system('clear')
-
-def exit():
-    os._exit(0)
+    match platform.system():
+        case 'Linux':
+            os.system('clear')
+        case 'Darwin':
+            os.system('clear')
+        case 'Windows':
+            os.system('cls')
 
 K = 1_000
 M = 1_000_000
