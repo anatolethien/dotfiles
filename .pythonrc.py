@@ -1,9 +1,5 @@
 # github.com/anatolethien/dotfiles
 
-import os
-import sys
-import platform
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -13,6 +9,8 @@ from rich import pretty
 pretty.install()
 
 def clear():
+    import os
+    import platform
     match platform.system():
         case 'Linux':
             os.system('clear')
